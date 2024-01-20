@@ -11,7 +11,7 @@ const os = require(`os`);
 const user = os.userInfo();
 console.log(user);
 // method returns system uptime in seconds
-console.log(`The system uptime is ${os.uptime()}`);
+console.log(`The system uptime is ${os.uptime()} seconds`);
 const currentOS = {
   name: os.type(),
   release: os.release(),
@@ -19,15 +19,15 @@ const currentOS = {
   freeMemory: os.freemem(),
 };
 console.log(currentOS);
-
+console.log(" Platform: " + os.platform);
 // PATH Module
 
 const path = require("path");
 console.log(path.sep);
-const filePath = path.join("/Content", "SubContent", "test.txt");
+const filePath = path.join("/Content", "SubContent", "test.txt"); // normalizes path
 console.log(filePath);
 console.log(path.basename(filePath));
-console.log(path.resolve(__dirname, "Content", "SubContent", "test.txt"));
+console.log(path.resolve(__dirname, "Content", "SubContent", "test.txt")); //gives absolute path
 
 //FS module
 
@@ -42,12 +42,14 @@ console.log(path.resolve(__dirname, "Content", "SubContent", "test.txt"));
 // asynchronous method
 const { readFile, writeFile } = require("fs");
 const { log } = require("console");
+console.log("start");
 readFile("./Content/first.txt", "utf8", (err, result) => {
   if (err) {
     console.log(err);
     return;
   }
   const first = result;
+  console.log("first");
   readFile("./Content/second.txt", "utf8", (err, result) => {
     if (err) {
       console.log(err);
@@ -62,11 +64,9 @@ readFile("./Content/first.txt", "utf8", (err, result) => {
           console.log(err);
           return;
         }
-        console.log("dont with this task : ", result);
+        console.log("dont with this task : " + result);
       }
     );
   });
 });
 console.log("starting next task");
-
-// HTTP Module

@@ -12,5 +12,9 @@ console.log(andrew);
 console.log(ronaldo);
 console.log(aryan);
 const data = require("./5-alternativeSyntax");
-console.log(data);
+console.log(`Data` , data);
 require("./6-ModulesAddition");
+// const sayHello=(name)=>{
+//     console.log(`Hello there ${name}`)
+// }
+// sayHello("Prem")
