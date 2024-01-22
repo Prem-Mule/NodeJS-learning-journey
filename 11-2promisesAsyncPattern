@@ -13,7 +13,7 @@ const getText = (path) => {
 };
 console.log("start");
 getText("./Content/second.txt")
-  .then((data) => {
+  .then((data) => { 
     console.log("data: ", data);
   })
   .catch((error) => {
