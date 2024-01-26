@@ -5,7 +5,8 @@
   "main": "1-Globals.js",
   "dependencies": {
     "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0"
   },
   "scripts": {
     "start": "node app.js",
